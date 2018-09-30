@@ -13,7 +13,7 @@
 
 ---
 
-### Setting
+### Settings
 
 ---
 
