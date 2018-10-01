@@ -61,15 +61,18 @@ class Task(models.Model):
 
 
 class TaskSerializer(serializers.Serializer):
-    title = serializers.CharField(required=False, allow_blank=True, max_length=100)
+    title = serializers.CharField(
+        required=False, allow_blank=True, max_length=100)
     text = serializers.CharField()
     
     def create(self, validated_data):
         return Comment.objects.create(**validated_data)
     
     def update(self, insatnce, validated_data):
-        instance.title = validated_data.get('title', instance.title)
-        instance.text = validated_data.get('text', instance.text)
+        instance.title = 
+                validated_data.get('title', instance.title)
+        instance.text = 
+                validated_data.get('text', instance.text)
         return instance
 ```
 ---
@@ -116,7 +119,7 @@ class TaskSerializer(serialzers.ModelSerializer):
 
 ---
 
-### Permissons
+### Permissons  
 
 --- 
 
