@@ -157,8 +157,24 @@ class TaskSerializer(serialzers.ModelSerializer):
 
 ---
 
-### Permissons  
-
+### Permissons
+- Django permissions
+    - IsAuthenticated
+    - IsAdminUser
+    - IsAuthenticatedOrReadOnly
+    - ...
 --- 
+### Custom permissions
+```python
+class IsStaffOrReadOnly(BasePermission):
+    """
+    The request is authenticated as a staff,
+    or is a read-only request.
+    """
+
+    def has_permission(self, request, view):
+        return request.method in SAFE_METHODS or 
+                request.user and request.user.is_staff
+```
 
 ### Urls
