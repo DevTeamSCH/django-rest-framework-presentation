@@ -85,10 +85,8 @@ class TaskSerializer(serializers.Serializer):
 
 ```python
 class Task(models.Model):
-    created_by = models.ForeignKey(
-        Profile, on_delete=models.DO_NOTHING)
-    created_at = models.DateTimeField(
-        auto_now_add=True, editable=False)
+    created_by = models.ForeignKey(Profile)
+    created_at = models.DateTimeField(auto_now_add=True)
     title = models.CharField(max_length=150)
     text = models.TextField()
     deadline = models.DateTimeField()
