@@ -59,7 +59,6 @@ class Task(models.Model):
     title = models.CharField(max_length=150)
     text = models.TextField()
 
-
 class TaskSerializer(serializers.Serializer):
     title = serializers.CharField(
         required=False, allow_blank=True, max_length=100)
@@ -89,6 +88,11 @@ class TaskSerializer(serializers.Serializer):
 ```python
 class Task(models.Model):
     created_by = models.ForeignKey(Profile)
+    created_at = models.DateTimeField(auto_now_add=True)
+    title = models.CharField(max_length=150)
+    text = models.TextField()
+    deadline = models.DateTimeField()
+
 
 class TaskSerializer(serialzers.ModelSerializer):
     class Meta:
@@ -158,7 +162,3 @@ class TaskSerializer(serialzers.ModelSerializer):
 --- 
 
 ### Urls
-
----
-
-### Resources
