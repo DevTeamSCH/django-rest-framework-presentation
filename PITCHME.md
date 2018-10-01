@@ -184,7 +184,7 @@ class UserViewSet(viewsets.ViewSet):
 class TasksViewSet(viewsets.ModelViewSet):
     serializer_class= serializers.TaskSerializer
     queryset = models.Task.objects.all()
-    permission_classes = (permissions.IsStaffOrReadOnlyForAuthenticated, )
+    permission_classes = (permissions.IsStaffOrReadOnly)
 ```
 ---
 ### Permissons
@@ -209,3 +209,8 @@ class IsStaffOrReadOnly(BasePermission):
 ---
 
 ### Urls
+```python
+router = routers.DefaultRouter()
+router.register(r'tasks', views.TasksViewSet, base_name='tasks')
+urlpatterns = router.urls
+```
