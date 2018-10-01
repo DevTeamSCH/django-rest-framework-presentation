@@ -52,7 +52,7 @@ INSTALLED_APPS = (
 
 ---
 
-### Serializer
+#### Serializer
 
 ```python
 class Task(models.Model):
@@ -108,6 +108,41 @@ class TaskSerializer(serialzers.ModelSerializer):
 ```python
     exclude = 'created_by, update_at, deadline'
 ```
+---
+
+### Validation
+Osztályszintű
+
+```python
+class TaskSerializer(serialzers.ModelSerializer):
+    ...
+
+    def validate(self, data):
+        if timezone.now() >= data['deadline']:
+            raise serializers.ValidationError(
+                        'Please, enter appropriate deadline.')
+        return data 
+```
+Mezőszintű
+```python
+    ...
+
+    def validate_deadLine(self, value):
+        if timezone.now() >= value:
+            raise serializers.ValidationError(
+                        'Please, enter appropriate deadline.')
+        return data 
+```
+Validátor
+```Python
+def deadlineValidator(value):
+    if timezone.now() >= value:
+        raise serializers.ValidationError(                                      'Please, enter appropriate deadline.')
+
+class TaskSerializer(serialzers.ModelSerializer):
+    deadLine = DateTimeField(validators[deadlineValidator])
+```
+
 ---
 
 ### ViewSet
