@@ -109,7 +109,7 @@ class TaskSerializer(serialzers.ModelSerializer):
 ```
 ---
 
-### Validation
+#### Validation
 Osztályszintű
 
 ```python
@@ -176,5 +176,6 @@ class IsStaffOrReadOnly(BasePermission):
         return request.method in SAFE_METHODS or 
                 request.user and request.user.is_staff
 ```
+---
 
 ### Urls
