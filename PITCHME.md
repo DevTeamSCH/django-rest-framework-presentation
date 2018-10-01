@@ -89,11 +89,6 @@ class TaskSerializer(serializers.Serializer):
 ```python
 class Task(models.Model):
     created_by = models.ForeignKey(Profile)
-    created_at = models.DateTimeField(auto_now_add=True)
-    title = models.CharField(max_length=150)
-    text = models.TextField()
-    deadline = models.DateTimeField()
-
 
 class TaskSerializer(serialzers.ModelSerializer):
     class Meta:
@@ -140,7 +135,8 @@ Validátor
 ```Python
 def deadlineValidator(value):
     if timezone.now() >= value:
-        raise serializers.ValidationError(                                      'Please, enter appropriate deadline.')
+        raise serializers.ValidationError(
+                'Please, enter appropriate deadline.')
 
 class TaskSerializer(serialzers.ModelSerializer):
     deadLine = DateTimeField(validators[deadlineValidator])
