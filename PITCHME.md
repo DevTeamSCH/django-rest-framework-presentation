@@ -85,9 +85,12 @@ class TaskSerializer(serializers.Serializer):
 
 ```python
 class Task(models.Model):
-    created_by = models.ForeignKey(Profile, on_delete=models.DO_NOTHING)
-    created_at = models.DateTimeField(auto_now_add=True, editable=False)
-    updated_at = models.DateTimeField(auto_now=True, editable=False)
+    created_by = models.ForeignKey(
+        Profile, on_delete=models.DO_NOTHING)
+    created_at = models.DateTimeField(
+        auto_now_add=True, editable=False)
+    updated_at = models.DateTimeField(
+        auto_now=True, editable=False)
     title = models.CharField(max_length=150)
     text = models.TextField()
     deadline = models.DateTimeField()
@@ -96,14 +99,15 @@ class Task(models.Model):
 class TaskSerializer(serialzers.ModelSerializer):
     class Meta:
         model = models.Task
-        read_only_fields = ('created_by', 'created_at', 'update_at')
+        read_only_fields = (
+            'created_by', 'created_at', 'update_at')
         fields = '__all__'
 ```
 ```python
-    fields = 'created_at, title, text, deadline'
+    fields = 'created_at, title, text'
 ```
 ```python
-    exclude = 'created_by, update_at'
+    exclude = 'created_by, update_at, deadline'
 ```
 ---
 
