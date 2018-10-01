@@ -122,7 +122,11 @@ class TaskSerializer(serialzers.ModelSerializer):
                     'Please, enter appropriate deadline.')
         return data 
 ```
+
+---
+
 Mezőszintű
+
 ```python
 class TaskSerializer(serialzers.ModelSerializer):
     ...
@@ -149,14 +153,48 @@ class TaskSerializer(serialzers.ModelSerializer):
 ---
 
 ### ViewSet
-- serializer_class
-- permission_classes
-- quryset
-    - get_qeryset 
-- mixim
+```python
+class UserViewSet(viewsets.ViewSet):
+    """
+    Example empty viewset demonstrating the standard
+    actions that will be handled by a router class.
 
+    If you're using format suffixes, make sure to also include
+    the `format=None` keyword argument for each action.
+    """
+
+    def list(self, request):
+        pass
+
+    def create(self, request):
+        pass
+
+    def retrieve(self, request, pk=None):
+        pass
+
+    def update(self, request, pk=None):
+        pass
+
+    def partial_update(self, request, pk=None):
+        pass
+
+    def destroy(self, request, pk=None):
+        pass
+```
 ---
 
+### ModelViewSet
+- serializer_class
+- quryset
+- permission_classes
+
+```python
+class TasksViewSet(viewsets.ModelViewSet):
+    serializer_class= serializers.TaskSerializer
+    queryset = models.Task.objects.all()
+    permission_classes = (permissions.IsStaffOrReadOnlyForAuthenticated, )
+```
+---
 ### Permissons
 - Django permissions
     - IsAuthenticated
