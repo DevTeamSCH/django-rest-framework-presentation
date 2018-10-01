@@ -120,19 +120,22 @@ class TaskSerializer(serialzers.ModelSerializer):
     def validate(self, data):
         if timezone.now() >= data['deadline']:
             raise serializers.ValidationError(
-                        'Please, enter appropriate deadline.')
+                    'Please, enter appropriate deadline.')
         return data 
 ```
 Mezőszintű
 ```python
+class TaskSerializer(serialzers.ModelSerializer):
     ...
-
+   
     def validate_deadLine(self, value):
         if timezone.now() >= value:
             raise serializers.ValidationError(
-                        'Please, enter appropriate deadline.')
+                       'Please, enter appropriate deadline.')
         return data 
 ```
+---
+
 Validátor
 ```Python
 def deadlineValidator(value):
