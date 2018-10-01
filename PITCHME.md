@@ -81,7 +81,7 @@ class TaskSerializer(serializers.Serializer):
 
 ---
 
-### ModelSerializer
+#### ModelSerializer
 
 ```python
 class Task(models.Model):
@@ -89,8 +89,6 @@ class Task(models.Model):
         Profile, on_delete=models.DO_NOTHING)
     created_at = models.DateTimeField(
         auto_now_add=True, editable=False)
-    updated_at = models.DateTimeField(
-        auto_now=True, editable=False)
     title = models.CharField(max_length=150)
     text = models.TextField()
     deadline = models.DateTimeField()
