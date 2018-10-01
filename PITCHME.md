@@ -211,6 +211,7 @@ class IsStaffOrReadOnly(BasePermission):
 ### Urls
 ```python
 router = routers.DefaultRouter()
-router.register(r'tasks', views.TasksViewSet, base_name='tasks')
+router.register(
+        r'tasks', views.TasksViewSet, base_name='tasks')
 urlpatterns = router.urls
 ```
