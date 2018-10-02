@@ -1,3 +1,4 @@
+
 ## Django REST Framework
 
 ---
@@ -217,3 +218,9 @@ router.register(
         r'tasks', views.TasksViewSet, base_name='tasks')
 urlpatterns = router.urls
 ```
+
+---
+
+### Links
+- https://github.com/encode/django-rest-framework
+- http://www.django-rest-framework.org/tutorial/quickstart/
