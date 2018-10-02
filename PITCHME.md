@@ -61,7 +61,8 @@ INSTALLED_APPS = (
 class Task(models.Model):
     title = models.CharField(max_length=150)
     text = models.TextField()
-
+```
+```python
 class TaskSerializer(serializers.Serializer):
     title = serializers.CharField(
         required=False, allow_blank=True, max_length=100)
