@@ -1,3 +1,3 @@
-theme-override : Night
+theme : night
 code-line-numbers : true
 layout : center-left
