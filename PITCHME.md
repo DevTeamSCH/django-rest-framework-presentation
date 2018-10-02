@@ -109,8 +109,10 @@ class TaskSerializer(serialzers.ModelSerializer):
 ```
 ---
 
-#### Validation
-Osztályszintű
+## Validation
+
+---
+#### Osztályszintű
 
 ```python
 class TaskSerializer(serialzers.ModelSerializer):
@@ -125,7 +127,7 @@ class TaskSerializer(serialzers.ModelSerializer):
 
 ---
 
-Mezőszintű
+#### Mezőszintű
 
 ```python
 class TaskSerializer(serialzers.ModelSerializer):
@@ -139,7 +141,7 @@ class TaskSerializer(serialzers.ModelSerializer):
 ```
 ---
 
-Validátor
+#### Validátor
 ```Python
 def deadlineValidator(value):
     if timezone.now() >= value:
