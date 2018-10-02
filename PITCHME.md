@@ -25,9 +25,9 @@ INSTALLED_APPS = (
      )
 ```
 ---
-srializers.py
-urls.py
-views.py
+- srializers.py
+- urls.py
+- views.py
 ---
 
 ### Serialization
