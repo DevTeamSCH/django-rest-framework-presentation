@@ -105,11 +105,10 @@ class TaskSerializer(serialzers.ModelSerializer):
             'created_by', 'created_at', 'update_at')
         fields = '__all__'
 ```
-or
+
 ```python
     fields = 'created_at, title, text'
 ```
-or
 ```python
     exclude = 'created_by, update_at, deadline'
 ```
