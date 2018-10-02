@@ -22,10 +22,10 @@ pip install djangorestframework
 INSTALLED_APPS = (
      ... 
      'rest_framework', 
-     )
+ )
 ```
 ---
-- srializers.py
+- serializers.py
 - urls.py
 - views.py
 ---
