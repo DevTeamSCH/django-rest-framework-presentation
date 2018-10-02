@@ -24,7 +24,10 @@ INSTALLED_APPS = (
      'rest_framework', 
      )
 ```
-
+---
+srializers.py
+urls.py
+views.py
 ---
 
 ### Serialization
@@ -154,7 +157,7 @@ def deadlineValidator(value):
                 'Please, enter appropriate deadline.')
 
 class TaskSerializer(serialzers.ModelSerializer):
-    deadLine = DateTimeField(validators[deadlineValidator])
+    deadLine = serializers.DateTimeField(validators[deadlineValidator])
 ```
 
 ---
@@ -178,7 +181,14 @@ class UserViewSet(viewsets.ViewSet):
 
     def destroy(self, request, pk=None):
 ```
+---
+### Mixin
 
+- ListModelMixin
+- RetrieveModelMixin
+- RetrieveModelMixin
+- UpdateModelMixin
+- DestroyModelMixin
 ---
 
 ### ModelViewSet
