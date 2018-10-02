@@ -162,6 +162,7 @@ class TaskSerializer(serialzers.ModelSerializer):
 ### ViewSet
 @size[24px](
 ```python
+@size[24px](
 class UserViewSet(viewsets.ViewSet):
     def list(self, request):
         pass
@@ -180,8 +181,9 @@ class UserViewSet(viewsets.ViewSet):
 
     def destroy(self, request, pk=None):
         pass
+        )
 ```
-)
+
 ---
 
 ### ModelViewSet
