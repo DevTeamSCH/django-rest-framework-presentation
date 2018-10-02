@@ -10,7 +10,7 @@
 
 ---
 
-### Instalation
+### Installation
 ```python
 pip install djangorestframework
 ```
@@ -185,7 +185,6 @@ class UserViewSet(viewsets.ViewSet):
 ### Mixin
 
 - ListModelMixin
-- RetrieveModelMixin
 - RetrieveModelMixin
 - UpdateModelMixin
 - DestroyModelMixin
