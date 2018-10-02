@@ -173,7 +173,6 @@ class UserViewSet(viewsets.ViewSet):
         pass
 
     def update(self, request, pk=None):
-        pass
 
     def partial_update(self, request, pk=None):
 
